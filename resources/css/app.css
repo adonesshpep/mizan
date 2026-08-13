@@ -9,3 +9,32 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at top, rgba(251, 191, 36, 0.16), transparent 32%),
+        linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+@layer base {
+    input,
+    textarea,
+    select {
+        color: #020617;
+    }
+}
+
+.catalog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 30px 80px rgba(15, 23, 42, 0.14);
+}
