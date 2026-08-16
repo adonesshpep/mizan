@@ -5,7 +5,7 @@
 @section('content')
     <div class="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
-            <p class="inline-flex items-center rounded-full border border-amber-300/40 bg-amber-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-700">
+            <p class="brand-chip inline-flex items-center rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em]">
                 {{ __('ui.admin_dashboard') }}
             </p>
             <h1 class="mt-4 font-['Space_Grotesk'] text-4xl font-bold tracking-tight text-slate-950">{{ __('ui.manage_products') }}</h1>
@@ -13,7 +13,7 @@
 
         <form method="POST" action="{{ route('dashboard.logout') }}">
             @csrf
-            <button type="submit" class="rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
+            <button type="submit" class="brand-button-soft rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
                 {{ __('ui.log_out') }}
             </button>
         </form>
@@ -32,18 +32,18 @@
             <div class="grid gap-5 lg:grid-cols-3">
                 <div>
                     <label for="title" class="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{{ __('ui.title') }}</label>
-                    <input id="title" name="title" value="{{ old('title') }}" required class="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
+                    <input id="title" name="title" value="{{ old('title') }}" required class="brand-field w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
                     @error('title')<p class="mt-2 text-sm text-red-600">{{ $message }}</p>@enderror
                 </div>
                 <div>
                     <label for="position" class="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{{ __('ui.priority') }}</label>
-                    <input id="position" name="position" type="number" min="0" value="{{ old('position', 0) }}" required class="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
+                    <input id="position" name="position" type="number" min="0" value="{{ old('position', 0) }}" required class="brand-field w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
                     <p class="mt-2 text-xs text-slate-500">{{ __('ui.priority_help') }}</p>
                     @error('position')<p class="mt-2 text-sm text-red-600">{{ $message }}</p>@enderror
                 </div>
                 <div>
                     <label for="images" class="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{{ __('ui.images') }}</label>
-                    <input id="images" name="images[]" type="file" multiple accept="image/*" required class="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition file:mr-4 file:rounded-full file:border-0 file:bg-slate-950 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
+                    <input id="images" name="images[]" type="file" multiple accept="image/*" required class="brand-field w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition file:mr-4 file:rounded-full file:border-0 file:bg-[var(--brand-ink)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
                     @error('images')<p class="mt-2 text-sm text-red-600">{{ $message }}</p>@enderror
                     @error('images.*')<p class="mt-2 text-sm text-red-600">{{ $message }}</p>@enderror
                 </div>
@@ -51,12 +51,12 @@
 
             <div>
                 <label for="description" class="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{{ __('ui.description') }}</label>
-                <textarea id="description" name="description" rows="6" required class="w-full rounded-[24px] border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">{{ old('description') }}</textarea>
+                <textarea id="description" name="description" rows="6" required class="brand-field w-full rounded-[24px] border border-slate-200 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">{{ old('description') }}</textarea>
                 @error('description')<p class="mt-2 text-sm text-red-600">{{ $message }}</p>@enderror
             </div>
 
             <div>
-                <button type="submit" class="rounded-2xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                <button type="submit" class="brand-button rounded-2xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
                     {{ __('ui.save_product') }}
                 </button>
             </div>
@@ -66,7 +66,7 @@
     <section class="space-y-5">
         <div class="flex items-center justify-between gap-4">
             <h2 class="font-['Space_Grotesk'] text-2xl font-semibold text-slate-950">{{ __('ui.latest_products') }}</h2>
-            <a href="{{ route('products.index') }}" class="text-sm font-semibold text-slate-600 transition hover:text-slate-950">{{ __('ui.view_public_catalog') }}</a>
+            <a href="{{ route('products.index') }}" class="brand-link text-sm font-semibold text-slate-600 transition hover:text-slate-950">{{ __('ui.view_public_catalog') }}</a>
         </div>
 
         <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -89,20 +89,20 @@
                     <div class="space-y-3 p-5">
                         <div class="flex items-start justify-between gap-4">
                             <h3 class="text-lg font-semibold text-slate-950">{{ $product->title }}</h3>
-                            <span class="rounded-full border border-amber-300/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-700">{{ __('ui.priority') }} {{ $product->position }}</span>
+                            <span class="brand-chip rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">{{ __('ui.priority') }} {{ $product->position }}</span>
                         </div>
                         <p class="line-clamp-3 text-sm leading-6 text-slate-600">{{ $product->description }}</p>
                         <div class="flex flex-wrap gap-2 pt-2">
-                            <a href="{{ route('products.show', $product) }}" class="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
+                            <a href="{{ route('products.show', $product) }}" class="brand-button-soft rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
                                 {{ __('ui.view') }}
                             </a>
-                            <a href="{{ route('dashboard.products.edit', $product) }}" class="rounded-full border border-amber-300/60 px-3 py-2 text-xs font-semibold text-amber-700 transition hover:border-amber-400 hover:text-amber-800">
+                            <a href="{{ route('dashboard.products.edit', $product) }}" class="brand-button-soft rounded-full border border-amber-300/60 px-3 py-2 text-xs font-semibold text-amber-700 transition hover:border-amber-400 hover:text-amber-800">
                                 {{ __('ui.edit') }}
                             </a>
                             <form method="POST" action="{{ route('dashboard.products.destroy', $product) }}" onsubmit="return confirm('{{ __('ui.confirm_delete_product') }}')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="rounded-full border border-red-200 px-3 py-2 text-xs font-semibold text-red-600 transition hover:border-red-300 hover:text-red-700">
+                                <button type="submit" class="brand-button-soft rounded-full border border-red-200 px-3 py-2 text-xs font-semibold text-red-600 transition hover:border-red-300 hover:text-red-700">
                                     {{ __('ui.delete') }}
                                 </button>
                             </form>

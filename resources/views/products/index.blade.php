@@ -5,7 +5,7 @@
 @section('content')
     <section class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div class="max-w-3xl space-y-5">
-                <p class="inline-flex items-center rounded-full border border-amber-300/40 bg-white/60 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-700 shadow-sm">
+                <p class="brand-chip inline-flex items-center rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] shadow-sm">
                 {{ __('ui.product_showcase') }}
             </p>
             <div class="space-y-4">
@@ -24,14 +24,14 @@
         <form method="GET" action="{{ route('products.index') }}" class="mb-6 flex flex-col gap-3 md:flex-row">
             <div class="flex-1">
                 <label for="search" class="mb-2 block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">{{ __('ui.search_products') }}</label>
-                <input id="search" name="search" value="{{ $search }}" placeholder="{{ __('ui.search_placeholder') }}" class="w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
+                <input id="search" name="search" value="{{ $search }}" placeholder="{{ __('ui.search_placeholder') }}" class="brand-field w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:ring-4 focus:ring-amber-200/70">
             </div>
             <div class="flex items-end gap-3">
-                <button type="submit" class="rounded-2xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+                <button type="submit" class="brand-button rounded-2xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
                     {{ __('ui.search') }}
                 </button>
                 @if ($search !== '')
-                    <a href="{{ route('products.index') }}" class="rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900">
+                    <a href="{{ route('products.index') }}" class="brand-button-soft rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-900">
                         {{ __('ui.clear') }}
                     </a>
                 @endif
@@ -58,7 +58,7 @@
                     <div class="space-y-3 p-5">
                         <div class="flex items-start justify-between gap-4">
                             <h2 class="text-lg font-semibold text-slate-950">{{ $product->title }}</h2>
-                            <span class="rounded-full border border-amber-300/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-700">{{ __('ui.view') }}</span>
+                            <span class="brand-chip rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em]">{{ __('ui.view') }}</span>
                         </div>
                         <p class="line-clamp-3 text-sm leading-6 text-slate-600">{{ $product->description }}</p>
                     </div>
@@ -71,7 +71,7 @@
         </div>
 
         <div class="mt-8 flex items-center justify-center">
-            <div data-load-more class="h-10 w-10 rounded-full border-4 border-slate-200 border-t-amber-400"></div>
+            <div data-load-more class="h-10 w-10 rounded-full border-4 border-slate-200 border-t-[var(--brand-orange)]"></div>
         </div>
         <p data-feed-status class="mt-4 text-center text-sm text-slate-500">
             {{ __('ui.scroll_to_load_more') }}

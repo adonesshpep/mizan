@@ -3,8 +3,8 @@
 return [
     'admin_dashboard' => 'لوحة الإدارة',
     'product_showcase' => 'عرض المنتجات',
-    'catalog_heading' => 'واجهة بسيطة للمنتجات مع البحث والتحميل التدريجي وصفحات التفاصيل.',
-    'catalog_description' => 'يمكن للمشرف إضافة المنتجات من لوحة محمية بكلمة مرور. يتصفح الزوار الكتالوج في شبكة متجاوبة تحمل المزيد من العناصر أثناء التمرير.',
+    'catalog_heading' => 'NAJAR GROUP',
+    'catalog_description' => ' كاتالوج NAJAR GROUP',
     'search_products' => 'البحث في المنتجات',
     'search_placeholder' => 'ابحث بالعنوان أو الوصف',
     'search' => 'بحث',

@@ -3,8 +3,8 @@
 return [
     'admin_dashboard' => 'Admin dashboard',
     'product_showcase' => 'Product showcase',
-    'catalog_heading' => 'A simple product wall with search, scroll loading, and detail pages.',
-    'catalog_description' => 'Admins can add products from a password-protected dashboard. Visitors browse the catalog in a responsive grid that loads more items as they scroll.',
+    'catalog_heading' => 'NAJAR GROUP.',
+    'catalog_description' => 'Welcome to the NAJAR GROUP catalog.',
     'search_products' => 'Search products',
     'search_placeholder' => 'Search by title or description',
     'search' => 'Search',

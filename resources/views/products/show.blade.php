@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="mb-6 flex items-center justify-between gap-4">
-        <a href="{{ route('products.index') }}" class="inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
+        <a href="{{ route('products.index') }}" class="brand-button-soft inline-flex items-center rounded-full border border-slate-200 bg-white/70 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">
             {{ __('ui.back_to_catalog') }}
         </a>
 
@@ -13,7 +13,7 @@
     <article class="glass-panel overflow-hidden rounded-[32px]">
         <div class="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
             <div class="space-y-4 p-5 sm:p-7 lg:p-8">
-                <p class="inline-flex items-center rounded-full border border-amber-300/40 bg-amber-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em] text-amber-700">
+                <p class="brand-chip inline-flex items-center rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.35em]">
                     {{ __('ui.product_details') }}
                 </p>
                 <h1 class="font-['Space_Grotesk'] text-4xl font-bold tracking-tight sm:text-5xl">{{ $product->title }}</h1>
